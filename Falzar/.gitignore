@@ -1,8 +1,7 @@
 *.gba
 *.tpi
 armips.exe
-Gregar/TextPet/
-Falzar/TextPet/
+TextPet/
 766E28*
 *.bsdiff
 .idea/
