@@ -1,7 +1,9 @@
 import os
 
-rom_file = os.path.join(os.path.dirname(__file__), "combined.gba")
-tpi_file = os.path.join(os.path.dirname(__file__), "mmbn6cg-us.tpi")
+rom_file_g = os.path.join(os.path.dirname(__file__), "combined_g.gba")
+rom_file_f = os.path.join(os.path.dirname(__file__), "combined_f.gba")
+tpi_file_g = os.path.join(os.path.dirname(__file__), "mmbn6cg-us.tpi")
+tpi_file_f = os.path.join(os.path.dirname(__file__), "mmbn6cf-us.tpi")
 
 
 def int32_to_byte_list_le(x) -> bytearray:
@@ -17,17 +19,25 @@ def int24_to_byte_list_le(x) -> bytearray:
 	return data
 
 
-def get_bins():
+def get_bins(version):
 	bin_files = {}
-	for f in os.scandir(os.path.dirname(__file__)):
-		if f.name.endswith(".bin"):
-			tag = f.name.split(' ')[0]
-			with open(f.name, "rb") as bin_file:
-				bin_files[tag] = bytearray(bin_file.read())
+	
+	if version == "g":
+		for f in os.scandir(os.path.join(os.path.dirname(__file__), "Gregar")):
+			if f.name.endswith(".bin"):
+				tag = f.name.split(' ')[0]
+				with open("Gregar/" + f.name, "rb") as bin_file:
+					bin_files[tag] = bytearray(bin_file.read())
+	elif version == "f":
+		for f in os.scandir(os.path.join(os.path.dirname(__file__), "Falzar")):
+			if f.name.endswith(".bin"):
+				tag = f.name.split(' ')[0]
+				with open("Falzar/" + f.name, "rb") as bin_file:
+					bin_files[tag] = bytearray(bin_file.read())
 	return bin_files
 
 
-def get_indices():
+def get_indices(tpi_file):
 	sizes = {}
 	references = {}
 	with open(tpi_file, "r") as tpi:
@@ -51,9 +61,9 @@ def get_indices():
 	return sizes, references
 
 
-def patch_rom():
-	bins = get_bins()
-	sizes, references = get_indices()
+def patch_rom(rom_file, tpi_file, version):
+	bins = get_bins(version)
+	sizes, references = get_indices(tpi_file)
 
 	with open(rom_file, "rb") as rom:
 		rom_bytes = bytearray(rom.read())
@@ -100,13 +110,26 @@ def patch_rom():
 
 	return rom_bytes
 
-if os.path.exists(tpi_file) and os.path.exists(rom_file):
-	new_bytes = patch_rom()
-	with open(os.path.join(os.path.dirname(__file__), "patched_combined.gba"), "wb") as new_rom:
+# Patch Gregar
+if os.path.exists(tpi_file_g) and os.path.exists(rom_file_g):
+	new_bytes = patch_rom(rom_file_g, tpi_file_g, "g")
+	with open(os.path.join(os.path.dirname(__file__), "patched_combined_g.gba"), "wb") as new_rom:
 		new_rom.write(new_bytes)
 		print("New ROM generated at "+new_rom.name)
 else:
-	if not os.path.exists(tpi_file):
+	if not os.path.exists(tpi_file_g):
 		print("No TPI file from TextPET. Copy over from TextPET/indexes/mmbn6cg-us.tpi")
-	if not os.path.exists(rom_file):
-		print("No patched combined.gba file found. Copy over results of running openmode_item_combined.asm with armips")
+	if not os.path.exists(rom_file_g):
+		print("No patched combined_g.gba file found. Copy over results of running openmode_item_combined.asm with armips")
+
+# Patch Falzar
+if os.path.exists(tpi_file_f) and os.path.exists(rom_file_f):
+	new_bytes = patch_rom(rom_file_f, tpi_file_f, "f")
+	with open(os.path.join(os.path.dirname(__file__), "patched_combined_f.gba"), "wb") as new_rom:
+		new_rom.write(new_bytes)
+		print("New ROM generated at "+new_rom.name)
+else:
+	if not os.path.exists(tpi_file_f):
+		print("No TPI file from TextPET. Copy over from TextPET/indexes/mmbn6cf-us.tpi")
+	if not os.path.exists(rom_file_f):
+		print("No patched combined_f.gba file found. Copy over results of running openmode_item_combined.asm with armips")

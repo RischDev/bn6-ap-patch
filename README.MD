@@ -2,9 +2,13 @@
 The scripts required to patch Megaman Battle Network 6 to work with the Archipelago Randomizer. This work is heavily based on digiholic's work for the [MMBN3 patch](https://github.com/digiholic/bn3-ap-patch).
 
 # Version
-The scripts are designed to patch the US version of `Mega Man Battle Network 6 - Cybeast Gregar` for the GBA. If you are unsure if your version is compatible, the md5 Checksum of the file is this:
+The scripts are designed to patch the US version of `Mega Man Battle Network 6 - Cybeast Gregar` and `Mega Man Battle Network 6 - Cybeast Falzar` for the GBA. If you are unsure if your version is compatible, the md5 Checksum of the Gregar ROM is this:
 ```
 5acc75848bb1ffd3d6d8705554ee333d
+```
+The md5 checksum of the Falzar ROM is this:
+```
+1e8c774ba210d1c55113531c7360c737
 ```
 If you are not sure how to check the checksum of your file, use [this site](https://emn178.github.io/online-tools/md5_checksum.html)
 
@@ -18,7 +22,7 @@ If you are not sure how to check the checksum of your file, use [this site](http
     - Talking to Alligator exhibit flag -> GrabRvng I trade completed
 
 # Usage
-Simply place a BN6 ROM named "Megaman Battle Network 6 - Cybeast Gregar (U).gba" into the directory with these scripts, along with a UTF-8 encoded mmbn6cg-us.tpi file from TextPet and installing armips.exe here, and run the batch file. This will output a "patched_combined.gba" ROM that you can test with.
+Simply place BN6 Gregar and Falzar ROMs named "Megaman Battle Network 6 - Cybeast Gregar (U).gba" and "Megaman Battle Network 6 - Cybeast Falzar (U).gba" into the directory with these scripts, along with a UTF-8 encoded mmbn6cg-us.tpi and mmbn6cf-us.tpi file from TextPet and installing armips.exe here, and run the batch file. This will output a "patched_combined_g.gba" and "patched_combined_f.gba" ROM that you can test with.
 ```
 python diff.py -apply sourcefile outputfile patchfile
 ```

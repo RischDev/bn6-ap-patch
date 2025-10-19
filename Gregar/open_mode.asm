@@ -2,7 +2,7 @@ input	equ	"Megaman Battle Network 6 - Cybeast Gregar (U).gba"
 fspace	equ	0x7FE400
 
 .gba
-.open input,"combined.gba",8000000h
+.open input,"combined_g.gba",8000000h
 
 .org fspace+8000000h
 .align 2
