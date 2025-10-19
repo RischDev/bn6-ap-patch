@@ -248,7 +248,7 @@ preventCrossFlag:
 .pool
 
 flagCount:
-	.db 0x1B
+	.db 0x24
 
 .align 4
 
@@ -273,6 +273,10 @@ flags:
 	.dh 0x1C96
 	; Set TalkToProg flag in Mr. Weather 1
 	.dh 0x1E03
+	; Set flags to enable trade sequence trades
+	.dh 0x1EAD
+	; TEMP - setting these flags to prevent odd textboxes and crashes. Eventually, these will be removed to re-enable dungeon comps
+	.dh 0x1D10, 0x1D11, 0x1D12, 0x1D24, 0x1D0F, 0x1D2D, 0x1D2E, 0x1D47
 	
 flagValues:
 	; Set doors to open: Central 1, Seaside 1, Green 1, Undernet 1, ACDC, Graveyard, Teachers Room, Cyber Academy. Also sets LevBus access
@@ -284,7 +288,7 @@ flagValues:
 	; Enable NaviCust
 	.db 0x38
 	; Enable EX Bosses
-	.db 0x8F, 0xC0
+	.db 0x0F, 0xC0
 	; Enable Underground access
 	.db 0x82
 	; Enable Ms. Fahren and Ms. Zap to spawn
@@ -295,7 +299,10 @@ flagValues:
 	.db 0xAF
 	; Set TalkToProg flag in Mr. Weather 1
 	.db 0x01
-	
+	; Set flags to enable trade sequence trades
+	.db 0xAA
+	; TEMP - setting these flags to prevent odd textboxes and crashes. Eventually, these will be removed to re-enable dungeon comps
+	.db 0x07, 0xFF, 0xE0, 0x00, 0xFF, 0xFF, 0xFF, 0xFE
 	
 jobs:
 	.db 0x00, 0x01, 0x02, 0x03, 0x19, 0x04, 0x05, 0x06, 0x07, 0x1C, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x1E

@@ -8,6 +8,15 @@ The scripts are designed to patch the US version of `Mega Man Battle Network 6 -
 ```
 If you are not sure how to check the checksum of your file, use [this site](https://emn178.github.io/online-tools/md5_checksum.html)
 
+# Notes
+- Certain flags are being re-purposed for the end game state. These flags are listed below, to prevent future confusion.
+  - Aquarium exhibits set flags to trigger a cutscene. All of these exhibits have been changed to not set flags, so that they can be re-used for things like the WWW ID navi, and for trade sequence completions so that we can enable them at the beginning of the game.
+    - Talking to penguin exhibit flag -> WWW ID bought
+    - Talking to shark exhibit flag -> EnrgyBom K trade completed
+    - Talking to Dolphin exhibit flag -> DublShot C trade completed
+    - Talking to Elephant Seal exhibit flag -> HiBoomer V trade completed
+    - Talking to Alligator exhibit flag -> GrabRvng I trade completed
+
 # Usage
 Simply place a BN6 ROM named "Megaman Battle Network 6 - Cybeast Gregar (U).gba" into the directory with these scripts, along with a UTF-8 encoded mmbn6cg-us.tpi file from TextPet and installing armips.exe here, and run the batch file. This will output a "patched_combined.gba" ROM that you can test with.
 ```

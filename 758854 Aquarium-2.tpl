@@ -2,8 +2,6 @@
 @size 30
 
 script 0 mmbn6 {
-	flagSet
-		flag = 1359
 	msgOpen
 	"""
 	There is a recording
@@ -20,68 +18,10 @@ script 0 mmbn6 {
 	keyWait
 		any = false
 	clearMsg
-	checkFlag
-		flag = 1364
-		jumpIfTrue = 6
-		jumpIfFalse = continue
-	checkFlag
-		flag = 1351
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1352
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1353
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1354
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1355
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1356
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1357
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1358
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1359
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1360
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1361
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1362
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1363
-		jumpIfTrue = continue
-		jumpIfFalse = 6
 	jump
-		target = 5
+		target = 6
 }
 script 1 mmbn6 {
-	flagSet
-		flag = 1360
 	msgOpen
 	"""
 	There is a recording
@@ -102,68 +42,10 @@ script 1 mmbn6 {
 	keyWait
 		any = false
 	clearMsg
-	checkFlag
-		flag = 1364
-		jumpIfTrue = 6
-		jumpIfFalse = continue
-	checkFlag
-		flag = 1351
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1352
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1353
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1354
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1355
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1356
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1357
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1358
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1359
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1360
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1361
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1362
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1363
-		jumpIfTrue = continue
-		jumpIfFalse = 6
 	jump
-		target = 5
+		target = 6
 }
 script 2 mmbn6 {
-	flagSet
-		flag = 1361
 	msgOpen
 	"""
 	There is a recording
@@ -184,68 +66,10 @@ script 2 mmbn6 {
 	keyWait
 		any = false
 	clearMsg
-	checkFlag
-		flag = 1364
-		jumpIfTrue = 6
-		jumpIfFalse = continue
-	checkFlag
-		flag = 1351
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1352
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1353
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1354
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1355
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1356
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1357
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1358
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1359
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1360
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1361
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1362
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1363
-		jumpIfTrue = continue
-		jumpIfFalse = 6
 	jump
-		target = 5
+		target = 6
 }
 script 3 mmbn6 {
-	flagSet
-		flag = 1362
 	msgOpen
 	"""
 	There is a recording
@@ -266,68 +90,10 @@ script 3 mmbn6 {
 	keyWait
 		any = false
 	clearMsg
-	checkFlag
-		flag = 1364
-		jumpIfTrue = 6
-		jumpIfFalse = continue
-	checkFlag
-		flag = 1351
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1352
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1353
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1354
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1355
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1356
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1357
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1358
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1359
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1360
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1361
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1362
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1363
-		jumpIfTrue = continue
-		jumpIfFalse = 6
 	jump
-		target = 5
+		target = 6
 }
 script 4 mmbn6 {
-	flagSet
-		flag = 1363
 	msgOpen
 	"""
 	There is a recording
@@ -348,64 +114,8 @@ script 4 mmbn6 {
 	keyWait
 		any = false
 	clearMsg
-	checkFlag
-		flag = 1364
-		jumpIfTrue = 6
-		jumpIfFalse = continue
-	checkFlag
-		flag = 1351
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1352
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1353
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1354
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1355
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1356
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1357
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1358
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1359
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1360
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1361
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1362
-		jumpIfTrue = continue
-		jumpIfFalse = 6
-	checkFlag
-		flag = 1363
-		jumpIfTrue = continue
-		jumpIfFalse = 6
 	jump
-		target = 5
+		target = 6
 }
 script 5 mmbn6 {
 	flagSet
