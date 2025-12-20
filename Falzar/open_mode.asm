@@ -248,7 +248,7 @@ preventCrossFlag:
 .pool
 
 flagCount:
-	.db 0x24
+	.db 0x28
 
 .align 4
 
@@ -275,6 +275,10 @@ flags:
 	.dh 0x1E03
 	; Set flags to enable trade sequence trades
 	.dh 0x1EAD
+	; Set flags to enable quizzes
+	.dh 0x1EAB, 0x1EAC
+	; Technically not a flag, but reset the 2 byte value being used for received index back to 0
+	.dh 0x1B60, 0x1B61
 	; TEMP - setting these flags to prevent odd textboxes and crashes. Eventually, these will be removed to re-enable dungeon comps
 	.dh 0x1D10, 0x1D11, 0x1D12, 0x1D24, 0x1D0F, 0x1D2D, 0x1D2E, 0x1D47
 	
@@ -301,6 +305,10 @@ flagValues:
 	.db 0x01
 	; Set flags to enable trade sequence trades
 	.db 0xAA
+	; Set flags to enable quizzes
+	.db 0x02, 0x80
+	; Technically not a flag, but reset the 2 byte value being used for received index back to 0
+	.db 0x00, 0x00
 	; TEMP - setting these flags to prevent odd textboxes and crashes. Eventually, these will be removed to re-enable dungeon comps
 	.db 0x07, 0xFF, 0xE0, 0x00, 0xFF, 0xFF, 0xFF, 0xFE
 	

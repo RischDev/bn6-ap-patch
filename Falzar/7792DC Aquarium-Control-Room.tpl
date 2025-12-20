@@ -3,7 +3,7 @@
 
 script 0 mmbn6 {
 	checkFlag
-		flag = 4384
+		flag = 1357
 		jumpIfTrue = 4
 		jumpIfFalse = continue
 	checkFlag
@@ -1008,7 +1008,7 @@ script 2 mmbn6 {
 	keyWait
 		any = false
 	flagSet
-		flag = 4384
+		flag = 1357
 	end
 }
 script 3 mmbn6 {

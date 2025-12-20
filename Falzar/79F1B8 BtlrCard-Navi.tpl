@@ -29,12 +29,10 @@ script 0 mmbn6 {
 	end
 }
 script 10 mmbn6 {
-	checkItem
-		item = 64
-		amount = 1
-		jumpIfEqual = 13
-		jumpIfGreater = 13
-		jumpIfLess = continue
+	checkFlag
+		flag = 1358
+		jumpIfTrue = 13
+		jumpIfFalse = continue
 	mugshotShow
 		mugshot = HeelNaviRed
 	msgOpen
@@ -171,7 +169,7 @@ script 11 mmbn6 {
 		jumpIfNone = 12
 		jumpIfSome = 12
 	flagSet
-		flag = 407
+		flag = 1358
 	mugshotShow
 		mugshot = HeelNaviRed
 	msgOpen
@@ -212,80 +210,6 @@ script 11 mmbn6 {
 	mugshotShow
 		mugshot = HeelNaviRed
 	"""
-	Alright,so if you
-	check around the
-	Cyberworld,
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	there are extremely
-	rare viruses with
-	"Rare" in the names.
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	If you delete a
-	rare virus,you can
-	get its data!
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	You can store virus
-	data in the
-	"
-	"""
-	printItem
-		buffer = 0
-		item = 64
-	"\"."
-	keyWait
-		any = false
-	clearMsg
-	"""
-	If you want to
-	enter in a virus
-	battle,
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	find a different
-	colored Mr.Progs and
-	talk to it.
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	Mr.Prog's
-	whereabouts...?
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	They should be near
-	places with dogs or
-	robots...
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	Go find them for
-	yourself...
-	"""
-	keyWait
-		any = false
-	end
-	"""
 	Thank you for
 	your business!
 	"""
@@ -310,80 +234,6 @@ script 13 mmbn6 {
 	mugshotShow
 		mugshot = HeelNaviRed
 	msgOpen
-	"""
-	Alright,so if you
-	check around the
-	Cyberworld,
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	there are extremely
-	rare viruses with
-	"Rare" in the name.
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	If you delete a
-	rare virus,you can
-	get its data!
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	You can store virus
-	data in the
-	"
-	"""
-	printItem
-		buffer = 0
-		item = 64
-	"\"."
-	keyWait
-		any = false
-	clearMsg
-	"""
-	If you want to
-	enter in a virus
-	battle,
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	find a different
-	colored Mr.Progs and
-	talk to it.
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	Mr.Prog's
-	whereabouts...?
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	They should be near
-	places with dogs or
-	robots...
-	"""
-	keyWait
-		any = false
-	clearMsg
-	"""
-	Go find them for
-	yourself...
-	"""
-	keyWait
-		any = false
-	end
 	"""
 	Thank you for
 	your business!

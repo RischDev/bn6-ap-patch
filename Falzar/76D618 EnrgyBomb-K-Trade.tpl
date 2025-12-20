@@ -91,23 +91,23 @@ script 9 mmbn6 {
 	msgOpen
 	"""
 	Hey,want to trade my
-	"
+	"ヨヨ"
 	"""
-	printChip
-		buffer = 0
-		chip = 90
-	" "
-	printCode
-		buffer = 0
-		code = C
-	"\""
 	keyWait
 		any = false
 	clearMsg
 	"""
 	for your
-	"ヨヨ"?
+	"
 	"""
+	printChip
+		buffer = 0
+		chip = 55
+	" "
+	printCode
+		buffer = 0
+		code = K
+	"\"?"
 	keyWait
 		any = false
 	clearMsg
