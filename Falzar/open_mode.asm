@@ -248,7 +248,7 @@ preventCrossFlag:
 .pool
 
 flagCount:
-	.db 0x28
+	.db 0x29
 
 .align 4
 
@@ -277,6 +277,8 @@ flags:
 	.dh 0x1EAD
 	; Set flags to enable quizzes
 	.dh 0x1EAB, 0x1EAC
+	; Set Colonel cutscene flag to enable BassBX
+	.dh 0x1E08
 	; Technically not a flag, but reset the 2 byte value being used for received index back to 0
 	.dh 0x1B60, 0x1B61
 	; TEMP - setting these flags to prevent odd textboxes and crashes. Eventually, these will be removed to re-enable dungeon comps
@@ -307,6 +309,8 @@ flagValues:
 	.db 0xAA
 	; Set flags to enable quizzes
 	.db 0x02, 0x80
+	; Set Colonel cutscene flag to enable BassBX
+	.db 0x80
 	; Technically not a flag, but reset the 2 byte value being used for received index back to 0
 	.db 0x00, 0x00
 	; TEMP - setting these flags to prevent odd textboxes and crashes. Eventually, these will be removed to re-enable dungeon comps
@@ -348,6 +352,23 @@ flagHook:
 	bx r2
 	
 .pool
+
+; Overwrite the flag check for Bass BX to not check for Cybeast icon flag, and instead looks at Colonel cutscene flag twice
+.org 807A8DAh
+.dh 0x0C00
+
+; Overwrite flag checks for Link Navri upgrades
+.org 8122F1Ch
+.dh 0x0342
+
+.org 8122F18h
+.dh 0x0343
+
+.org 8122F14h
+.dh 0x0344
+
+.org 8122F10h
+.dh 0x0345
 
 ;Hold off on these for now
 ;.org 80674C3h

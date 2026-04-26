@@ -20,6 +20,12 @@ If you are not sure how to check the checksum of your file, use [this site](http
     - Talking to Dolphin exhibit flag -> DublShot C trade completed
     - Talking to Elephant Seal exhibit flag -> HiBoomer V trade completed
     - Talking to Alligator exhibit flag -> GrabRvng I trade completed
+  - Certain flags when talking to NPCs at the beginning of the game were re-purposed to be used to upgrade Link Navis (0x02001D14, flags 3-6)
+    - TalkToDad -> Link Navi upgrade 1
+    - TalkToMomad -> Link Navi upgrade 2
+    - Talk to Young Kid -> Link Navi upgrade 3
+    - Talk to Man -> Link Navi upgrade 4
+	
 
 # Usage
 Simply place BN6 Gregar and Falzar ROMs named "Megaman Battle Network 6 - Cybeast Gregar (U).gba" and "Megaman Battle Network 6 - Cybeast Falzar (U).gba" into the directory with these scripts, along with a UTF-8 encoded mmbn6cg-us.tpi and mmbn6cf-us.tpi file from TextPet and installing armips.exe here, and run the batch file. This will output a "patched_combined_g.gba" and "patched_combined_f.gba" ROM that you can test with.
