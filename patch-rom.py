@@ -59,7 +59,7 @@ def get_bins(version):
                 with open("Falzar/" + f.name, "rb") as bin_file:
                     bin_files[tag] = bytearray(bin_file.read())
                     
-    print(len(bin_files))
+    #print(len(bin_files))
     return bin_files
 
 
@@ -107,12 +107,12 @@ def patch_rom(rom_file, tpi_file, archive_data_file, version):
         start = int(key, 16)
         size = int(sizes[key], 16)
         end = start + size
-        print("Replacing "+hex(size)+" bytes for bank "+hex(start))
+        #print("Replacing "+hex(size)+" bytes for bank "+hex(start))
         rom_bytes[start:end] = [0xFF] * size
 
     # Then, go through all the provided text banks and store them in the smallest available bank
     for key, bin in bins.items():
-        print("Injecting text bank "+key)
+       # print("Injecting text bank "+key)
         size = len(bin)
         refs = references[key]
         start = int(key, 16)
@@ -122,14 +122,19 @@ def patch_rom(rom_file, tpi_file, archive_data_file, version):
             # If it's shorter than the original data, we can pad the difference with 00 and directly replace
             bin.extend([0x00] * (original_size - len(bin)))
             rom_bytes[start:start + len(bin)] = bin
-            print("  Injected in place")
+            #print("  Injected in place")
+			
+            # Update archive data with new bin data
+            archiveKey = "0x" + key
+            if archiveKey in archive_data:
+                archive_data[archiveKey]["bytes"] = list(bin)
         else:
             # It needs to start on a byte divisible by 4. If the rom data is not, add an FF
             while len(rom_bytes) % 4 != 0:
                 rom_bytes.append(0xFF)
             new_start_offset = 0x08000000 + len(rom_bytes)
             new_ref = int24_to_byte_list_le(len(rom_bytes))
-            print("  New Index "+hex(new_start_offset))
+            #print("  New Index "+hex(new_start_offset))
             offset_byte = int32_to_byte_list_le(new_start_offset)
             # Leave a forwarding address where we used to be to point toi the new location
             new_address = bytearray([0xFF, 0xFF])
@@ -140,7 +145,7 @@ def patch_rom(rom_file, tpi_file, archive_data_file, version):
             rom_bytes.extend(bin)
             for offset in refs:
                 rom_bytes[offset:offset + 3] = new_ref
-                print("  Updating reference at "+hex(offset))
+                #print("  Updating reference at "+hex(offset))
 
             # Update archive data with new offset and bin data
             archiveKey = "0x" + key
@@ -154,7 +159,7 @@ def patch_rom(rom_file, tpi_file, archive_data_file, version):
         json.dump(archive_data, file)
         
     # Pad out space until 0x810000, so that we can start at a safe place in the apworld patch
-    while len(rom_bytes) < 0x810000:
+    while len(rom_bytes) < 0x820000:
         rom_bytes.append(0xFF)
 
     return rom_bytes
@@ -163,7 +168,7 @@ def patch_rom(rom_file, tpi_file, archive_data_file, version):
 if os.path.exists(tpi_file_g) and os.path.exists(rom_file_g):
     new_bytes = patch_rom(rom_file_g, tpi_file_g, gregar_archive_data_f, "g")
     print(f"New Gregar ROM length: {hex(len(new_bytes))}")
-    if len(new_bytes) > 0x810000:
+    if len(new_bytes) > 0x820000:
         print("WARNING: Base patch is too large. Please consider changing the padding length, and update the apworld accordingly.")
     with open(os.path.join(os.path.dirname(__file__), "patched_combined_g.gba"), "wb") as new_rom:
         new_rom.write(new_bytes)
@@ -178,7 +183,7 @@ else:
 if os.path.exists(tpi_file_f) and os.path.exists(rom_file_f):
     new_bytes = patch_rom(rom_file_f, tpi_file_f, falzar_archive_data_f, "f")
     print(f"New Falzar ROM length: {hex(len(new_bytes))}")
-    if len(new_bytes) > 0x810000:
+    if len(new_bytes) > 0x820000:
         print("WARNING: Base patch is too large. Please consider changing the padding length, and update the apworld accordingly.")
     with open(os.path.join(os.path.dirname(__file__), "patched_combined_f.gba"), "wb") as new_rom:
         new_rom.write(new_bytes)

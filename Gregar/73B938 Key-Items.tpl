@@ -250,7 +250,7 @@ script 61 mmbn6s {
 	end
 }
 script 62 mmbn6s {
-	"SoulEmbl"
+	"LkNvUpgd"
 	end
 }
 script 63 mmbn6s {

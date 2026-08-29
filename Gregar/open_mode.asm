@@ -119,6 +119,18 @@ writeEmails:
 	
 	bx lr
 	
+writeVirusCounts:
+	mov r3, 1Dh				;r3 = Number of total viruses
+	ldr r2, =02000071h		;r1 = Start address of virus counts in RAM
+	mov r0, 20h				;r0 = 32, value to set
+	@@writeloop:
+		strb r0, [r2]			;Write email value to array
+		add r2, 1h
+		sub r3, 1h
+		bne @@writeloop
+	
+	bx lr
+	
 writeFullLibrary:
 	ldr r0, =15Dh
 	@@writeAntiCheat:
@@ -218,13 +230,14 @@ customRoutine:
 	bl writeProgress
 	bl writeJobs
 	bl writeEmails
+	bl writeVirusCounts
 	bl writeFullLibrary
 	bl writeFolders
 	bl writeObjectLocations
 	
 	pop r0-r7,r15
 	
-preventCrossFlag:
+preventSettingFlags:
 	;Complete instructions that would otherwise get overwritten
 	lsr r0, r0, 1Dh
 	mov r1, 80h
@@ -232,18 +245,64 @@ preventCrossFlag:
 	ldrb r0, [r3]
 	orr r0, r1
 	
+	; Prevent setting any of the cross or BeastOut flags
 	ldr r2, =02001CA4h
 	cmp r3, r2
 	beq @@return
 	ldr r2, =02001CA5h
 	cmp r3, r2
 	beq @@return
-	
+
+	@@setFlag:
 	strb r0, [r3]
 	
 	@@return:
 	pop r0-r3
 	mov r15,r14
+	
+calculateRequestPoints:
+	; Store r0-r4 to ensure values don't get lost
+	push r0-r7, r14
+	
+	mov r4, 22h ; Number of total requests, 0-indexed
+	mov r5, 0h ; Track request points
+	
+	; Use flag check function to test if request is completed
+	@@checkFlagLoop:
+	mov r0, 1Ch
+	mov r1, 60h
+	add r1, r4
+	
+	; Recreating checkFlag function since it's too far to branch
+	lsl r0, r0, 8h
+	orr r0, r1
+	mov r3, r10
+	ldr r3, [r3, 44h]
+	lsr r1, r0, 3h
+	add r3, r3, r1
+	lsl r0, r0, 1Dh
+	lsr r0, r0, 1Dh
+	mov r1, 80h
+	lsr r1, r0
+	ldrb r0, [r3]
+	tst r0, r1
+	beq @@checkEndLoop ; If flag not set, don't set request points
+	
+	ldr r1, =requestPointValues ; Address of request point values array
+	ldrb r0, [r1, r4] ; Get request point amount of current request
+	add r5, r0 ; Add request points to running total
+	
+	@@checkEndLoop:
+	cmp r4, 0h ; Check if r4 is 0 yet
+	beq @@return ; Once r4 is 0, then all requests have been checked.
+	sub r4, 1h ; Decrement r4
+	b @@checkFlagLoop ; Go back and do it again until r4 is 0
+	
+	@@return:
+	ldr r0, =200578Dh ; Address of request point count
+	strb r5, [r0] ; Set request points
+	pop r0-r7; Pop values before returning
+	pop r15; Return
 	
 .pool
 
@@ -332,6 +391,10 @@ emails:
 emailFlags:
 	.db 0xEF, 0xF8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0F, 0xFF, 0xF7, 0xC2
 	
+requestPointValues:
+	.db 0x01, 0x01, 0x01, 0x02, 0x01, 0x01, 0x02, 0x02, 0x01, 0x01, 0x01, 0x02, 0x03, 0x01, 0x01, 0x02 
+	.db 0x03, 0x02, 0x02, 0x02, 0x03, 0x04, 0x04, 0x04, 0x04, 0x02, 0x03, 0x03, 0x02, 0x02, 0x01, 0x02 
+	.db 0x03, 0x03, 0x03
 	
 .align 4
 .pool
@@ -341,23 +404,55 @@ mainHook:
 	ldr r0,=customRoutine|1b
 	bx r0
 
-.pool
-
-;Prevent setting cross flags
+;Prevent setting cross flags and single request flag
 .align 4
+.pool
 .org 802f11Eh
 flagHook:
 	push r0-r3
-	ldr r2, =preventCrossFlag|1b
+	ldr r2, =preventSettingFlags|1b
 	bx r2
-	
+
+; Hook into the function that determines if request points should be updated
+.align 4
+.pool
+.org 8142698h
+requestPointHook:
+	ldr r0, =calculateRequestPoints|1b
+	mov r14, r15
+	bx r0
+	pop r4-r7, r15 ; Call the return function afterwards,
+
 .pool
 
-; Overwrite the flag check for Bass BX to not check for Cybeast icon flag, and instead looks at Colonel cutscene flag twice
+; Make the game thinks your "Currently selected request" is always finished, so it checks if you should rank up.
+.org 8142640h
+mov r0, 1h
+
+; Set this line so that the game checks a different flag when deciding if a request can be grabbed. Look at canary byte 1D09, which should always be 0x00 (flag 1032, or 0x408)
+.org 81426F6h
+mov r0, 04h
+.org 81426F8h
+mov r1, 08h
+
+; Skip over clearing the flag that indicates a request has been grabbed
+.org 814128Ah
+mov r0, r0
+mov r0, r0
+
+; Overwrite the flag checks for Bass BX to not check for Cybeast icon flag, and instead looks at Colonel cutscene flag twice
 .org 807A8DAh
 .dh 0x0C00
+.org 807A813h
+.dh 0x0C00
+.org 807A84Bh
+.dh 0x0C00
 
-; Overwrite flag checks for Link Navri upgrades
+; Skip the line that resets last selected request back to 0 when the job is complete. Otherwise, our hook for updating request points won't get called, which can lead to a player getting stuck if they complete all open requests without s
+.org 8141294h
+mov r0, r0
+
+; Overwrite flag checks for Link Navi upgrades
 .org 8122F1Ch
 .dh 0x0465
 
