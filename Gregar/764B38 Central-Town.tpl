@@ -531,6 +531,10 @@ script 102 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+		flag = 7265
+	flagSet
+		flag = 7201
 	callRequestFinish
 	end
 }
@@ -640,7 +644,7 @@ script 105 mmbn6 {
 	"""
 	Would you like to
 	trade it for my
-	"ヨヨ"?"
+	"ヨヨ"?
 	"""
 	keyWait
 		any = false
@@ -1401,6 +1405,10 @@ script 122 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+		flag = 7286
+	flagSet
+		flag = 7222
 	callRequestFinish
 	end
 }
@@ -1722,6 +1730,10 @@ script 126 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+		flag = 7290
+	flagSet
+		flag = 7226
 	callRequestFinish
 	end
 }
@@ -2366,6 +2378,10 @@ script 142 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+		flag = 7291
+	flagSet
+		flag = 7227
 	callRequestFinish
 	end
 }

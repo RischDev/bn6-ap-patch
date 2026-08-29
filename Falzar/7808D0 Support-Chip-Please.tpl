@@ -468,6 +468,10 @@ script 12 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+	    flag = 7287
+    flagSet
+        flag = 7223
 	callRequestFinish
 	end
 }
@@ -576,6 +580,10 @@ script 14 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+	    flag = 7287
+    flagSet
+        flag = 7223
 	callRequestFinish
 	end
 }
@@ -903,6 +911,10 @@ script 24 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+	    flag = 7288
+    flagSet
+        flag = 7224
 	callRequestFinish
 	end
 }

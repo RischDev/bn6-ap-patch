@@ -531,6 +531,10 @@ script 102 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+	    flag = 7265
+    flagSet
+        flag = 7201
 	callRequestFinish
 	end
 }
@@ -1401,6 +1405,10 @@ script 122 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+	    flag = 7286
+    flagSet
+        flag = 7222
 	callRequestFinish
 	end
 }
@@ -1722,6 +1730,10 @@ script 126 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+	    flag = 7290
+    flagSet
+        flag = 7226
 	callRequestFinish
 	end
 }
@@ -2130,7 +2142,7 @@ script 140 mmbn6 {
 	clearMsg
 	"""
 	to either Central
-	Town or Seaside 
+	Town or Seaside
 	Town...
 	"""
 	keyWait
@@ -2256,7 +2268,7 @@ script 141 mmbn6 {
 	clearMsg
 	"""
 	to either Central
-	Town or Seaside 
+	Town or Seaside
 	Town...
 	"""
 	keyWait
@@ -2366,6 +2378,10 @@ script 142 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+	    flag = 7291
+    flagSet
+        flag = 7227
 	callRequestFinish
 	end
 }

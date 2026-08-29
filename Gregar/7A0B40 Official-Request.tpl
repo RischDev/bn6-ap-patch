@@ -301,6 +301,10 @@ script 3 mmbn6 {
 	keyWait
 		any = false
 	callRequestPointsAdd
+	flagSet
+		flag = 7296
+	flagSet
+		flag = 7232
 	callRequestFinish
 	end
 }

@@ -214,7 +214,7 @@ script 52 mmbn6s {
 	end
 }
 script 53 mmbn6s {
-	"HeatCros"
+	"SpoutCrs"
 	end
 }
 script 54 mmbn6s {
@@ -222,11 +222,11 @@ script 54 mmbn6s {
 	end
 }
 script 55 mmbn6s {
-	"SlashCrs"
+	"TenguCrs"
 	end
 }
 script 56 mmbn6s {
-	"ElecCros"
+	"TmhkCros"
 	end
 }
 script 57 mmbn6s {
@@ -234,7 +234,7 @@ script 57 mmbn6s {
 	end
 }
 script 58 mmbn6s {
-	"EraseCrs"
+	"GrndCros"
 	end
 }
 script 59 mmbn6s {
@@ -242,7 +242,7 @@ script 59 mmbn6s {
 	end
 }
 script 60 mmbn6s {
-	"ChrgeCrs"
+	"DustCros"
 	end
 }
 script 61 mmbn6s {
@@ -250,7 +250,7 @@ script 61 mmbn6s {
 	end
 }
 script 62 mmbn6s {
-	"SoulEmbl"
+	"LkNvUpgd"
 	end
 }
 script 63 mmbn6s {

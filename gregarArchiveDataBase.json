@@ -1,0 +1,362 @@
+{
+    "0x76C83C": {
+        "offset": "0x876C83C",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x777218": {
+        "offset": "0x8777218",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x77C55C": {
+        "offset": "0x877C55C",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x764B38": {
+        "offset": "0x8764B38",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7991F0": {
+        "offset": "0x87991F0",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x77A888": {
+        "offset": "0x877A888",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79E718": {
+        "offset": "0x879E718",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x76B554": {
+        "offset": "0x876B554",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x773D3C": {
+        "offset": "0x8773D3C",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79F4DC": {
+        "offset": "0x879F4DC",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x77F4A0": {
+        "offset": "0x877F4A0",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x798A08": {
+        "offset": "0x8798A08",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x755468": {
+        "offset": "0x8755468",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x758FA0": {
+        "offset": "0x8758FA0",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x759248": {
+        "offset": "0x8759248",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x759870": {
+        "offset": "0x8759870",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x75A3F4": {
+        "offset": "0x875A3F4",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x753814": {
+        "offset": "0x8753814",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7573BC": {
+        "offset": "0x87573BC",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x75AF00": {
+        "offset": "0x875AF00",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x782844": {
+        "offset": "0x8782844",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x78E678": {
+        "offset": "0x878E678",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7903B4": {
+        "offset": "0x87903B4",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x784DDC": {
+        "offset": "0x8784DDC",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79D0F4": {
+        "offset": "0x879D0F4",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x776A7C": {
+        "offset": "0x8776A7C",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x795DD0": {
+        "offset": "0x8795DD0",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x78D2A0": {
+        "offset": "0x878D2A0",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x794404": {
+        "offset": "0x8794404",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x77C318": {
+        "offset": "0x877C318",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7D6DC0": {
+        "offset": "0x87D6DC0",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7D7414": {
+        "offset": "0x87D7414",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x766E28": {
+        "offset": "0x8766E28",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7BFE50": {
+        "offset": "0x87BFE50",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7BA78C": {
+        "offset": "0x87BA78C",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7C9D54": {
+        "offset": "0x87C9D54",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7CB584": {
+        "offset": "0x87CB584",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79B9B0": {
+        "offset": "0x879B9B0",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79F080": {
+        "offset": "0x879F080",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7A10BC": {
+        "offset": "0x87A10BC",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x76A1E4": {
+        "offset": "0x876A1E4",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x76EDFC": {
+        "offset": "0x876EDFC",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79FE54": {
+        "offset": "0x879FE54",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7953EC": {
+        "offset": "0x87953EC",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x78BD44": {
+        "offset": "0x878BD44",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x778738": {
+        "offset": "0x8778738",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x77B9F0": {
+        "offset": "0x877B9F0",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79A664": {
+        "offset": "0x879A664",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x76C080": {
+        "offset": "0x876C080",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7A039C": {
+        "offset": "0x87A039C",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x77246C": {
+        "offset": "0x877246C",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79B094": {
+        "offset": "0x879B094",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79C598": {
+        "offset": "0x879C598",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x79CAE4": {
+        "offset": "0x879CAE4",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7A0B40": {
+        "offset": "0x87A0B40",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x76AD9C": {
+        "offset": "0x876AD9C",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x77E80C": {
+        "offset": "0x877E80C",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x7755B8": {
+        "offset": "0x87755B8",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+    "0x754BD8": {
+        "offset": "0x8754BD8",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    },
+	"0x78F964": {
+        "offset": "0x878F964",
+        "size": 0,
+        "references": [],
+        "bytes": []
+    }
+}
